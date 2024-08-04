@@ -1,0 +1,9 @@
+Instructions
+01. Save the script to a file, e.g., rename_server.sh.
+02. Make the script executable:
+    chmod +x rename_server.sh
+03. Run the script with the new hostname as an argument:
+    sudo ./rename_server.sh <new_hostname>
+    Replace <new_hostname> with the desired hostname for your server.
+===========================================================================
+
