@@ -1,16 +1,16 @@
-# **Deploy Zammad - Help Desk and Ticket System on K8s Cluster**
+# **Deploy Kubernetes on Ubuntu using Bash Scripts**
 >This was tested on Ubuntu 24.04 LTS .
 
 ### Prerequisites.
 > - Two Ubuntu 24.04 VMs with static IP addresses for Kubernetes Master and worker nodes. In my scenario I named them ***"k8s-m01.home.local"*** for the Master and ***"k8s-w01.home.local"*** for the Worker node.
 
-## Deploy Zammad using bash scripts.
+## Deploy Kubernetes on Ubuntu using Bash Scriptss.
 First we need to run the script "rename-server.sh" to rename both ubuntu servers and add localhost entry to /etc/hosts\
 >Note: This step will be applied on both ***"k8s-m01.home.local"*** and ***"k8s-w01.home.local"***
 
 ```
-1. mkdir /zammadSource && cd /zammadSource
-2. Copy the script "rename-server.sh" to the directory /zammadSource.
+1. mkdir /k8sSource && cd /k8sSource
+2. Copy the script "rename-server.sh" to the directory /k8sSource.
 3. Make the script executable:
     chmod +x rename-server.sh
 4. Run the script with the new hostname as an argument:
@@ -22,7 +22,7 @@ First we need to run the script "rename-server.sh" to rename both ubuntu servers
 Then we have to run the script "install-K8s.sh" to install K8s packages and dependencies on both Master and Worker node VMs.
 >Note: This step will be applied on both ***"k8s-m01.home.local"*** and ***"k8s-w01.home.local"***
 ```
-1. Copy the script "install-K8s.sh" to the directory /zammadSource.
+1. Copy the script "install-K8s.sh" to the directory /k8sSource.
 2. Make the script executable:
     chmod +x install-K8s.sh
 3. Run the script:
@@ -32,7 +32,7 @@ Then we have to run the script "install-K8s.sh" to install K8s packages and depe
 This next step will initialize the Master node and get it to working state.
 >Note: This step will be applied only on ***"k8s-m01.home.local"*** .
 ```
-1. Copy the script "master-initialization.sh" to the directory /zammadSource.
+1. Copy the script "master-initialization.sh" to the directory /k8sSource.
 2. Make the script executable:
     chmod +x master-initialization.sh.sh
 3. Run the script:
